@@ -1,1 +1,41 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<script src="jquery.min.js"></script>
+  	<script src="typeahead.jquery.min.js"></script>
+  	<script src="typeio.js"></script>
+  	<link rel="stylesheet" href="assets/styles-for-all.css" media="screen"/>
+  	<script type="text/javascript">
+  	$(document).ready(function() {
+        $('#inputStates').typeIO({
+                hint: true,
+                highlight: true,
+                mode: 'inline-single-select',
+                minLength: 0,
+                name: 'states'
+        },
+        {
+            limit:10,
+            display: 'text',
+            source:[{text:'Michigan', value:'MI'},{text:'California', value:'CA'}],
+            templates: {
+                suggestion: function(data) {
+                    return '<div>' + data.text + '</div>';
+                },
+                notFound: [
+                    '<div class="empty-message">',
+                    'No results found',
+                    '</div>'
+                ].join('\n')
+            }
+        });
+  	});
+  	</script>
+  </head>
+  <body>
+      Hello World
+      <form class="typeahead-container">
+      	<input id="inputStates" />
+      </form>
+  </body>
+</html>
