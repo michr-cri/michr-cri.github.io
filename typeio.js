@@ -127,7 +127,7 @@
             } else {
                $queryInput.typeahead('val', '');
                $queryInput.typeahead('val', suggestion.text);
-                $resultsContainer.find('#selectTypeaheadFormResults').html('<option selected value="'+suggestion.value+'"></option>');
+               $resultsContainer.find('#selectTypeaheadFormResults').html('<option selected value="'+suggestion.value+'"></option>');
             }
         }
 
